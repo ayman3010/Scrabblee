@@ -1,2 +1,2 @@
-# Scrabblee
+# Scrabble
 Scrabble Game
