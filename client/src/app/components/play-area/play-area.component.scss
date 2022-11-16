@@ -1,0 +1,45 @@
+#grid-container {
+    display: grid;
+    border: 1px solid black;
+}
+
+.main {
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+app-rack {
+    width: 55.58vh;
+}
+
+.layered > * {
+    grid-column-start: 1;
+    grid-row-start: 1;
+}
+
+#interfaceLayer {
+    z-index: 2;
+}
+
+#wordsLayer {
+    z-index: 1;
+}
+
+#boardLayer {
+    z-index: 0;
+}
+
+.play-button {
+    margin-left: 2vh;
+}
+
+.horizontal-flex {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 1vh 0 0 0;
+    width: 67.5vh;
+}

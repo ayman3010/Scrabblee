@@ -1,0 +1,11 @@
+<div class="main">
+    <div id="grid-container" class="layered" (click)="mouseHitDetect($event)">
+        <canvas id="interfaceLayer" #interfaceLayer [attr.width]="width" [attr.height]="height"></canvas>
+        <canvas id="boardLayer" #boardLayer [attr.width]="width" [attr.height]="height"></canvas>
+        <canvas id="wordsLayer" #wordsLayer [attr.width]="width" [attr.height]="height"></canvas>
+    </div>
+    <div class="horizontal-flex">
+        <app-rack [gameOver]="gameOver" [reserveSize]="reserveSize"></app-rack>
+        <button mat-raised-button class="play-button" (click)="play()" [disabled]="!isTurn || gameOver">Jouer</button>
+    </div>
+</div>

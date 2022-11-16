@@ -1,0 +1,49 @@
+.difficulty {
+    display: flex;
+    flex-direction: column;
+    margin: 1vh 0;
+}
+
+.fit {
+    padding: 2vh 0 0 0;
+    margin: 0;
+    min-height: 37vh;
+    max-height: 37vh;
+    height: 100%;
+}
+
+.fit.sizing {
+    box-sizing: border-box;
+}
+
+.column-flex {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.dropdown {
+    margin: 1vh 0;
+}
+
+mat-select {
+    width: 100%;
+}
+
+.radio {
+    margin: 0.5vh;
+    margin-left: 1vh;
+}
+
+.bottom {
+    margin-top: auto;
+}
+
+::ng-deep .mat-tooltip {
+    font-size: 1rem !important;
+}
+.mat-icon.mat-icon {
+    vertical-align: middle;
+    line-height: 38px;
+    float: right;
+}

@@ -1,0 +1,25 @@
+<section class="container side" (click)="mouseDetect()">
+    <div class="title">Boîte de communication</div>
+    <div class="chatbox" id="roomMessageList" #scrollMe>
+        <div *ngFor="let message of roomMessages" class="room-message">
+            <div class="sender-name" [ngClass]="{ fromMe: message.senderName === currentPlayer.name, fromServer: message.senderName === 'Système' }">
+                {{ message.senderName }}
+            </div>
+            <div class="message-bubble">
+                <div class="message">{{ message.value }}</div>
+            </div>
+        </div>
+    </div>
+    <div class="textbox">
+        <input
+            class="text-input"
+            id="message"
+            [(ngModel)]="messageSent"
+            (keydown.enter)="sendToRoom()"
+            type="text"
+            maxLength="512"
+            placeholder="Tapez un message - !aide pour les commandes"
+        />
+        <button mat-button class="send" (click)="sendToRoom()">Envoyer</button>
+    </div>
+</section>

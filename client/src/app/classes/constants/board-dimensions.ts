@@ -1,0 +1,20 @@
+export const GRID_WIDTH = 700;
+export const GRID_HEIGHT = 700;
+export const BORDERS_WIDTH = 30;
+export const CANVAS_WIDTH = GRID_WIDTH + 2 * BORDERS_WIDTH;
+export const CANVAS_HEIGHT = GRID_HEIGHT + 2 * BORDERS_WIDTH;
+
+export const NUMBER_OF_TILES = 15;
+export const TILE_COUNT_HORIZONTAL = NUMBER_OF_TILES;
+export const TILE_COUNT_VERTICAL = NUMBER_OF_TILES;
+
+export const TILES_WIDTH = GRID_WIDTH / NUMBER_OF_TILES;
+export const TILES_HEIGHT = GRID_HEIGHT / NUMBER_OF_TILES;
+
+export const MINIMUM_TILE_INDEX = 0;
+export const MAX_TILE_INDEX = NUMBER_OF_TILES - 1;
+
+export const DEFAULT_LETTER_TEXT_SIZE = 30;
+
+export const MINIMUM_LETTER_TEXT_SIZE = 20;
+export const MAXIMUM_LETTER_TEXT_SIZE = 35;

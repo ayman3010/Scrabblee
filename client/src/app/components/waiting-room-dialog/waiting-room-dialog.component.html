@@ -1,0 +1,18 @@
+<h3 mat-dialog-title class="centered">Salon {{ room?.hostPlayer?.name }}</h3>
+<div mat-dialog-content class="container justified spaced-out">
+    <div class="justified spaced-out main-content" *ngIf="!isJoined">
+        <h1 class="centered">En attente d'un deuxième joueur<span class="dot1">.</span><span class="dot2">.</span><span class="dot3">.</span></h1>
+        <mat-progress-spinner class="fidget-spinner" color="primary" mode="indeterminate"></mat-progress-spinner>
+    </div>
+    <div class="justified spaced-out main-content" *ngIf="isJoined">
+        <h1 class="centered">
+            <span class="guest-name">{{ room?.guestPlayer?.name }}</span> veut rejoindre votre partie!
+        </h1>
+        <button class="button" (click)="proceedToGame()">Accepter</button>
+        <button class="button" (click)="refuseGame()">Refuser</button>
+    </div>
+    <div mat-dialog-actions>
+        <button mat-button class="button" (click)="abandon()">Abandonner</button>
+        <button mat-button class="button" (click)="convertToSinglePlayer()">Jouer en mode solo</button>
+    </div>
+</div>

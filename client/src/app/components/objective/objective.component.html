@@ -1,0 +1,12 @@
+<div class="objective nice-green flex-horizontal space-out center" [ngClass]="{ achieved: objective?.isAchieved }">
+    <div class="objective-info flex-vertical" *ngIf="currentOwner || objective?.isAchieved" [ngClass]="{ achieved: objective?.isAchieved }">
+        <div class="description">{{ objective.description }}</div>
+        <div class="counter" *ngIf="showCounter && !objective.isAchieved">
+            Vous êtes rendus à <span>{{ currentOwner?.counter }}</span
+            >.
+        </div>
+    </div>
+    <div class="achieved-text" *ngIf="objective?.isAchieved">Objectif accomplis!</div>
+    <div class="objective-info private" *ngIf="!(currentOwner || objective?.isAchieved)">Objectif privé de votre adversaire</div>
+    <div class="points" [ngClass]="{ achieved: objective?.isAchieved }">+{{ currentOwner || objective?.isAchieved ? objective.points : ' ?' }}</div>
+</div>

@@ -1,0 +1,5 @@
+<mat-tab-group mat-stretch-tabs class="main"
+    ><mat-tab *ngFor="let gameMode of gameModes" label="{{ gameMode }}"
+        ><app-high-scores-category [gameMode]="gameMode"></app-high-scores-category
+    ></mat-tab>
+</mat-tab-group>

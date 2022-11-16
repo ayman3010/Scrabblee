@@ -1,0 +1,16 @@
+<div class="size-container">
+    <button mat-button class="size-button small" (click)="setTextSize(textSizeSmall)" [ngClass]="{ current: currentTextSize === textSizeSmall }">
+        A
+    </button>
+    <button
+        mat-button
+        class="size-button default"
+        (click)="setTextSize(textSizeDefault)"
+        [ngClass]="{ current: currentTextSize === textSizeDefault }"
+    >
+        A
+    </button>
+    <button mat-button class="size-button large" (click)="setTextSize(textSizeLarge)" [ngClass]="{ current: currentTextSize === textSizeLarge }">
+        A
+    </button>
+</div>

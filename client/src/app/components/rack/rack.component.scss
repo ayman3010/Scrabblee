@@ -1,0 +1,52 @@
+.letters {
+    position: relative;
+    display: flex;
+    z-index: 1;
+    padding: 1.5vh;
+    width: 51vh;
+    border-radius: 5px;
+    height: 4.94vh;
+    min-height: 4.94vh;
+    max-height: 4.94vh;
+    margin-bottom: 2.5vh;
+}
+
+.rack {
+    position: relative;
+    outline: 0;
+    display: flex;
+    width: 55.58vh;
+}
+
+.buttons {
+    margin-top: 0.4vh;
+    width: 15vh;
+    height: 9vh;
+}
+
+.rack-bottom {
+    position: absolute;
+    height: 1.5vh;
+    width: 43.58vh;
+    top: 6.44vh;
+    left: 12.01vh;
+    background-color: #034907;
+}
+
+.rack-back {
+    position: absolute;
+    height: 5vh;
+    width: 43.58vh;
+    top: 2vh;
+    left: 12.01vh;
+    background-color: #036e08;
+    border-radius: 5px;
+}
+
+.space-out {
+    justify-content: space-between;
+}
+
+.button-rack {
+    width: 10vh;
+}

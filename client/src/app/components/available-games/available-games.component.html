@@ -1,0 +1,24 @@
+<div class="scrollable">
+    <div *ngIf="rooms.length !== 0">
+        <button class="top" mat-button (click)="randomRoomPlacement()" [disabled]="rooms.length === 1">Placement aléatoire</button>
+    </div>
+    <table mat-table [dataSource]="rooms" class="available-games">
+        <ng-container matColumnDef="hostName">
+            <th mat-header-cell *matHeaderCellDef>Hôte</th>
+            <td mat-cell *matCellDef="let element">{{ element.hostPlayer.name }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="turnDuration">
+            <th mat-header-cell *matHeaderCellDef>Durée de tour</th>
+            <td mat-cell *matCellDef="let element">{{ element.gameOptions.turnDuration | formatTime }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="dictionary">
+            <th mat-header-cell *matHeaderCellDef>Dictionnaire</th>
+            <td mat-cell *matCellDef="let element">{{ element.gameOptions.dictionary.title }}</td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+        <tr mat-row (click)="openDialog(row)" *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+</div>

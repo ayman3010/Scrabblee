@@ -1,0 +1,106 @@
+.container {
+    min-height: 40vh;
+    max-height: 40vh;
+    width: 50vh;
+}
+
+.justified {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.justified.spaced-out {
+    justify-content: space-around;
+}
+
+.centered {
+    text-align: center;
+}
+
+.main-content {
+    height: 23vh;
+}
+
+.button {
+    margin: 1vh;
+}
+
+.title {
+    text-align: center;
+}
+
+.guest-name {
+    font-size: 500;
+}
+
+.dot1 {
+    margin-left: 2px;
+    color: white;
+    animation: dot1 2s infinite;
+}
+
+@keyframes dot1 {
+    from {
+        color: white;
+    }
+    10% {
+        color: white;
+    }
+    15% {
+        color: black;
+    }
+    85% {
+        color: black;
+    }
+    to {
+        color: white;
+    }
+}
+
+.dot2 {
+    color: white;
+    animation: dot2 2s infinite;
+}
+
+@keyframes dot2 {
+    from {
+        color: white;
+    }
+    35% {
+        color: white;
+    }
+    40% {
+        color: black;
+    }
+    85% {
+        color: black;
+    }
+    to {
+        color: white;
+    }
+}
+
+.dot3 {
+    color: white;
+    animation: dot3 2s infinite;
+}
+
+@keyframes dot3 {
+    from {
+        color: white;
+    }
+    60% {
+        color: white;
+    }
+    65% {
+        color: black;
+    }
+    85% {
+        color: black;
+    }
+    to {
+        color: white;
+    }
+}

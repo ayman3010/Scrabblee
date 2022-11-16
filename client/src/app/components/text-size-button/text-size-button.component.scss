@@ -1,0 +1,27 @@
+.size-container {
+    padding: 1vh 2vh;
+}
+
+.size-button {
+    padding: 0;
+    min-width: 3vh;
+    min-height: 5vh;
+    line-height: 30px;
+    font-weight: normal;
+}
+
+.small {
+    font-size: 22px;
+}
+
+.default {
+    font-size: 30px;
+}
+
+.large {
+    font-size: 36px;
+}
+
+.current {
+    font-weight: bold;
+}

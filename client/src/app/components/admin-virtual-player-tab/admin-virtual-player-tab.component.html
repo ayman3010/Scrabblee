@@ -1,0 +1,38 @@
+<div class="main">
+    <div class="error" *ngIf="showError"><mat-icon>error</mat-icon>{{ errorMessage.title }} : {{ errorMessage.body }}</div>
+    <mat-progress-spinner *ngIf="isLoading" class="fidget-spinner" color="primary" mode="indeterminate"></mat-progress-spinner>
+    <table mat-table [dataSource]="activeVirtualPlayers" class="table" *ngIf="!isLoading && !showError">
+        <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef>Nom</th>
+            <td mat-cell *matCellDef="let element; let i = index" [ngSwitch]="editable === i">
+                <div *ngSwitchCase="false">{{ element.name }}</div>
+                <app-vp-name-form
+                    class="form"
+                    *ngSwitchCase="true"
+                    (cancel)="editable = -1"
+                    (playerNameChange)="nameModificationEventHandler($event, element)"
+                    [defaultName]="element.name"
+                ></app-vp-name-form>
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="edit">
+            <th mat-header-cell *matHeaderCellDef>Éditer</th>
+            <td mat-cell *matCellDef="let element; let i = index">
+                <mat-icon *ngIf="!isDefaultVirtualPLayer(element.name)" class="action" (click)="editable = i">edit</mat-icon>
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="delete">
+            <th mat-header-cell *matHeaderCellDef>Suppr.</th>
+            <td mat-cell *matCellDef="let element">
+                <mat-icon *ngIf="!isDefaultVirtualPLayer(element.name)" class="action" (click)="removeVirtualPlayer(element)">delete</mat-icon>
+            </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+
+    <app-add-virtual-player-form class="form" (addedPlayerNameChange)="addPlayerEvent($event)" [disabled]="showError"></app-add-virtual-player-form>
+</div>

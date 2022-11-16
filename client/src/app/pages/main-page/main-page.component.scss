@@ -1,0 +1,161 @@
+.background {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    justify-content: space-between;
+}
+
+.title {
+    min-height: 10vh;
+    height: auto;
+    margin-bottom: 6vh;
+    margin-top: 10vh;
+}
+
+.justified {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.options {
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20vh;
+}
+
+.button {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.team-name {
+    margin-top: 0.25em;
+    margin-bottom: 0.25em;
+    color: green;
+}
+
+.header-item {
+    justify-content: center;
+    text-align: center;
+}
+
+.footer-item {
+    box-sizing: border-box;
+    text-align: center;
+    margin: 30vh 0 0 0;
+    width: 20%;
+    height: 20vh;
+    background-size: 50% 150%;
+}
+
+.footer-item p {
+    color: #0f7c2b;
+}
+
+.menu {
+    justify-content: center;
+    width: 20%;
+    min-width: min-content;
+}
+
+// Reference and inspiration: https://codepen.io/bhadupranjal/pen/vYLZYqQ
+
+.names {
+    position: relative;
+    display: inline-block;
+    padding: 2vh 3vh;
+    margin: 4vh 40% 2vh;
+    color: #0f7c2b;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.5s;
+    letter-spacing: 4px;
+    overflow: hidden;
+}
+
+.names span {
+    position: absolute;
+    display: block;
+}
+
+.names span:nth-child(1) {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #0f7c2b);
+    animation: animate1 5s linear infinite;
+}
+
+@keyframes animate1 {
+    0% {
+        left: -100%;
+    }
+    50%,
+    100% {
+        left: 100%;
+    }
+}
+
+.names span:nth-child(2) {
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, #0f7c2b);
+    animation: animate2 5s linear infinite;
+    animation-delay: 1.25s;
+}
+
+@keyframes animate2 {
+    0% {
+        top: -100%;
+    }
+    50%,
+    100% {
+        top: 100%;
+    }
+}
+
+.names span:nth-child(3) {
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, transparent, #0f7c2b);
+    animation: animate3 5s linear infinite;
+    animation-delay: 2.5s;
+}
+
+@keyframes animate3 {
+    0% {
+        right: -100%;
+    }
+    50%,
+    100% {
+        right: 100%;
+    }
+}
+
+.names span:nth-child(4) {
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, #0f7c2b);
+    animation: animate4 5s linear infinite;
+    animation-delay: 3.75s;
+}
+
+@keyframes animate4 {
+    0% {
+        bottom: -100%;
+    }
+    50%,
+    100% {
+        bottom: 100%;
+    }
+}

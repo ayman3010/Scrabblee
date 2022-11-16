@@ -1,0 +1,101 @@
+.fit {
+    padding: 2vh 0 0 0;
+    width: 51vh;
+    margin: 0;
+    min-height: 37vh;
+    max-height: 37vh;
+    height: 100%;
+}
+.scroll-bar {
+    overflow-y: scroll;
+}
+.title {
+    width: 30%;
+}
+
+.players {
+    padding-inline-start: 1vh;
+    box-sizing: border-box;
+}
+
+.list {
+    align-content: space-between;
+    height: 8vh;
+    width: 55vh;
+    display: flex;
+    margin-top: 10px;
+}
+
+.left {
+    left: 0px;
+}
+
+.button-align {
+    display: flex;
+    width: 70%;
+    align-content: center;
+    justify-content: flex-end;
+    gap: 2vh;
+}
+
+.bottom {
+    margin-left: 30%;
+    margin-right: 70%;
+}
+
+.form {
+    height: 1vh;
+    width: auto;
+}
+
+.button {
+    height: 3vh;
+    width: 20vh;
+    font-size: 10px;
+    background: gray;
+}
+
+th.mat-column-name,
+td.mat-column-name {
+    padding: 8px;
+    width: 80%;
+    text-align: left;
+}
+
+th.mat-column-edit,
+td.mat-column-edit {
+    padding: 2px;
+    width: 10%;
+    text-align: center;
+}
+
+th.mat-column-delete,
+td.mat-column-delete {
+    padding: 2px;
+    width: 10%;
+    text-align: center;
+}
+
+.action {
+    cursor: pointer;
+}
+
+.action:hover {
+    color: grey;
+}
+
+.fidget-spinner {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+}
+
+.error {
+    display: flex;
+    color: #d8000c;
+    background-color: #ffd2d2;
+    align-items: center;
+    justify-content: center;
+}

@@ -1,0 +1,41 @@
+<mat-dialog-content class="fit" [ngClass]="{ sizing: !singlePlayer }">
+    <form class="column-flex" [formGroup]="gameOptionsForm" (ngSubmit)="onSubmit()">
+        <mat-form-field hintLabel="3-20 characters" appearance="fill">
+            <mat-label>Nom de joueur</mat-label>
+            <input matInput #input minlength="3" maxLength="20" placeholder="Ex. polylover123" formControlName="name" required cdkFocusInitial />
+            <mat-hint align="end">{{ input.value?.length || 0 }}/20</mat-hint>
+        </mat-form-field>
+
+        <div *ngIf="singlePlayer">
+            <mat-label class="difficulty">Difficulté</mat-label>
+            <mat-radio-group class="difficulty" formControlName="aiDifficulty">
+                <mat-radio-button class="radio" [value]="aiDifficulty.BEGINNER" name="aiDifficulty" checked>{{
+                    aiDifficulty.BEGINNER
+                }}</mat-radio-button>
+                <mat-radio-button class="radio" [value]="aiDifficulty.EXPERT" name="aiDifficulty">{{ aiDifficulty.EXPERT }}</mat-radio-button>
+            </mat-radio-group>
+        </div>
+
+        <div class="dropdown">
+            <mat-label for="turnDuration">Durée</mat-label>
+            <mat-select formControlName="turnDuration" name="turnDuration">
+                <mat-option *ngFor="let time of getTurnDurations()" [value]="time">
+                    {{ time | formatTime }}
+                </mat-option>
+            </mat-select>
+        </div>
+
+        <div class="dropdown">
+            <mat-label for="dictionary">Dictionnaire</mat-label>
+            <mat-select formControlName="dictionary" name="dictionary" placeholder="Dictionnaire-francais">
+                <mat-select-trigger>{{ gameOptionsForm.value.dictionary.title }}</mat-select-trigger>
+                <mat-option #select *ngFor="let dictionary of dictionaries" [value]="dictionary">
+                    {{ dictionary.title }}
+                    <mat-icon matTooltip="{{ dictionary.description }}">help</mat-icon>&nbsp;
+                </mat-option>
+            </mat-select>
+        </div>
+
+        <button class="bottom" mat-button type="submit">Générer la partie</button>
+    </form>
+</mat-dialog-content>

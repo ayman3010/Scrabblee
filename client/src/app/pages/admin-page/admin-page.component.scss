@@ -1,0 +1,38 @@
+.background {
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    gap: 2vh;
+    padding-top: 15vh;
+}
+
+.button {
+    width: 40vh;
+    height: 5vh;
+}
+
+.button-align {
+    margin-top: 25vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    gap: 2vh;
+}
+
+.button-options {
+    width: auto;
+    text-align: center;
+}
+
+.header-item {
+    font-size: 5em;
+    text-align: center;
+    margin-bottom: 10vh;
+    font-weight: 500;
+}
+
+.footer-item {
+    margin-top: auto;
+    text-align: center;
+}

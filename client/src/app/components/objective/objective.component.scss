@@ -1,0 +1,65 @@
+.objective {
+    width: 37.2vh;
+    padding: 1vh 2vh;
+    height: 8vh;
+    margin-top: 0.5vh;
+    margin-bottom: 0.5vh;
+    box-sizing: border-box;
+    border-radius: 5px;
+    background-color: #59e660;
+}
+
+.objective.achieved {
+    background-color: #45d44c;
+}
+
+.objective-info {
+    max-width: 27.2vh;
+}
+
+.objective.private {
+    font-style: italic;
+    text-align: center;
+}
+
+.objective.achieved:hover .objective-info {
+    display: none;
+}
+
+.achieved-text {
+    display: none;
+}
+
+.objective.achieved:hover .achieved-text {
+    display: block;
+    font-weight: 500;
+    font-size: large;
+    text-align: center;
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.points {
+    background-color: white;
+    border-radius: 3vh;
+    height: 5vh;
+    line-height: 5vh;
+    text-align: center;
+    width: 5vh;
+    font-weight: bold;
+    font-size: large;
+    color: #979797;
+}
+
+.points.achieved {
+    color: black;
+}
+
+.counter span {
+    font-weight: 500;
+}
+
+.space-out {
+    justify-content: space-between;
+}

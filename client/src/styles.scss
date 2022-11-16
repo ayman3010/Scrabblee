@@ -1,0 +1,263 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '~@angular/material' as mat;
+@use './app/pages/material-page/material-page.component.theme' as material-page;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+$main-green-palette: (
+    50: #eff9e8,
+    100: #d7efc6,
+    200: #bde4a0,
+    300: #a1da79,
+    400: #8bd15a,
+    500: #76c93a,
+    600: #67b833,
+    700: #51a428,
+    800: #3c901e,
+    900: #036e08,
+    contrast: (
+        50: #e1f8fc,
+        100: #b5eef6,
+        200: #84e4f1,
+        300: #53d8eb,
+        400: #2ecfe5,
+        500: #15c6e1,
+        600: #12b6cd,
+        700: #0da0b2,
+        800: #098c9a,
+        900: #03696e,
+    ),
+);
+
+$main-green-theme: mat.define-light-theme(
+    (
+        color: (
+            primary: mat.define-palette($main-green-palette, 900),
+            accent: mat.define-palette($main-green-palette, A200, A100, A400),
+            warn: mat.define-palette(mat.$red-palette),
+        ),
+    )
+);
+
+$indigo-pink-theme: mat.define-light-theme(
+    (
+        color: (
+            primary: mat.define-palette(mat.$indigo-palette),
+            accent: mat.define-palette(mat.$pink-palette, A200, A100, A400),
+            warn: mat.define-palette(mat.$red-palette),
+        ),
+    )
+);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($main-green-theme);
+@include material-page.theme($main-green-theme);
+
+.indigo-pink-theme {
+    // Nothing to do. This is the default theme (not anymore)
+}
+
+.main-green-theme {
+    // Nothing to do. This is the default theme
+}
+
+.deeppurple-amber-theme {
+    $deeppurple-amber-theme: mat.define-light-theme(
+        (
+            color: (
+                primary: mat.define-palette(mat.$deep-purple-palette),
+                accent: mat.define-palette(mat.$amber-palette, A200, A100, A400),
+            ),
+        )
+    );
+    @include mat.all-component-colors($deeppurple-amber-theme);
+    @include material-page.theme($deeppurple-amber-theme);
+}
+
+.pink-bluegrey-theme {
+    $pink-bluegrey-theme: mat.define-dark-theme(
+        (
+            color: (
+                primary: mat.define-palette(mat.$pink-palette, 700, 500, 900),
+                accent: mat.define-palette(mat.$blue-grey-palette, A200, A100, A400),
+            ),
+        )
+    );
+    @include mat.all-component-colors($pink-bluegrey-theme);
+    @include material-page.theme($pink-bluegrey-theme);
+}
+
+.purple-green-theme {
+    $purple-green-theme: mat.define-dark-theme(
+        (
+            color: (
+                primary: mat.define-palette(mat.$purple-palette, 700, 500, 800),
+                accent: mat.define-palette(mat.$green-palette, A200, A100, A400),
+            ),
+        )
+    );
+    @include mat.all-component-colors($purple-green-theme);
+    @include material-page.theme($purple-green-theme);
+}
+
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+    height: 100%;
+    background-color: #a1f89e;
+}
+body {
+    margin: 0;
+    font-family: Roboto, 'Helvetica Neue', sans-serif;
+}
+
+// <!-- HTML !-->
+// <button class="button-29" role="button">Button 29</button>
+
+// Source : https://getcssscan.com/css-buttons-examples bouton-29
+
+/* CSS */
+.button {
+    align-items: center;
+    appearance: none;
+    background-color: #036e08;
+    border: 0;
+    border-radius: 6px;
+    box-shadow: rgba(35, 66, 40, 0.4) 0 2px 4px, rgba(35, 66, 44, 0.3) 0 7px 13px -3px, rgba(58, 111, 65, 0.5) 0 -3px 0 inset;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-flex;
+    height: 48px;
+    justify-content: center;
+    font-family: Roboto, 'Helvetica Neue', sans-serif;
+    line-height: 1;
+    list-style: none;
+    overflow: hidden;
+    padding-left: 16px;
+    padding-right: 16px;
+    position: relative;
+    text-align: left;
+    text-decoration: none;
+    transition: box-shadow 0.15s, transform 0.15s;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    will-change: box-shadow, transform;
+    font-size: 18px;
+}
+
+.button:focus {
+    box-shadow: #036e08 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #036e08 0 -3px 0 inset;
+}
+
+.button:hover {
+    box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #036e08 0 -3px 0 inset;
+    transform: translateY(-2px);
+}
+
+.button:active {
+    box-shadow: #036e08 0 3px 7px inset;
+    transform: translateY(2px);
+}
+
+.letter {
+    top: 0%;
+    position: relative;
+    background-color: #f2dcc6;
+    border-style: solid;
+    border-width: 0.32vh;
+    border-color: #af8b67;
+    height: 4.3vh;
+    min-width: 4.3vh;
+    transition: top 0.2s, animation-name 0.2s 0.2s;
+    animation-name: none;
+}
+
+.rack .letter {
+    margin-right: 1vh;
+}
+
+.rack .letter:last-child {
+    margin-right: 0;
+}
+
+.letter.selected {
+    top: -100%;
+    transition: top 0.2s, animation-name 0.2s 0.2s;
+}
+
+.letter.selectedExchange {
+    top: -5%;
+    transition: top 0.35s, animation-name 0.2s 0.2s;
+    animation-name: bobbing;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+    animation-duration: 0.5s;
+    animation-delay: 0.2s;
+}
+
+@keyframes bobbing {
+    from {
+        top: -5%;
+    }
+    to {
+        top: -15%;
+    }
+}
+
+*::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+*::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background: #036e0842;
+}
+
+*::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: #036e08;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+    background: #036e08be;
+}
+
+*::-webkit-scrollbar-thumb:active {
+    background: #035307;
+}
+
+.side {
+    background-color: #80e280;
+}
+
+.flex-vertical {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-horizontal {
+    display: flex;
+    flex-direction: row;
+}
+
+.center {
+    align-items: center;
+}
+
+.nice-green {
+    background-color: #45d44c;
+}

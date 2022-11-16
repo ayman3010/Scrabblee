@@ -1,2 +1,0 @@
-# Scrabble
-Scrabble Game

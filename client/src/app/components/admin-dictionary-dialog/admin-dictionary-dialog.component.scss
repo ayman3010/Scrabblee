@@ -1,0 +1,134 @@
+.fit {
+    padding: 2vh 0 0 0;
+    width: 70vh;
+    margin: 0;
+    min-height: 37vh;
+    max-height: 37vh;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    margin-top: 1vh;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.dictionaries {
+    padding-inline-start: 1vh;
+    box-sizing: border-box;
+}
+
+.list {
+    align-content: space-between;
+    width: 100%;
+    display: flex;
+    margin-top: 10px;
+}
+
+.left {
+    left: 0px;
+}
+
+.button-align {
+    display: flex;
+    align-content: center;
+    justify-content: flex-end;
+    gap: 2vh;
+}
+
+.button {
+    font-size: 10px;
+    word-wrap: break-word;
+    width: 70%;
+    background: gray;
+}
+
+.bottom {
+    margin-left: 30%;
+    margin-right: 70%;
+}
+
+th.mat-column-dictionary,
+td.mat-column-dictionary {
+    padding: 8px;
+    width: 70%;
+    text-align: left;
+}
+
+th.mat-column-edit,
+td.mat-column-edit {
+    padding: 2px;
+    width: 10%;
+    text-align: center;
+}
+
+th.mat-column-delete,
+td.mat-column-delete {
+    padding: 2px;
+    width: 10%;
+    text-align: center;
+}
+
+th.mat-column-download,
+td.mat-column-download {
+    padding: 2px;
+    width: 10%;
+    text-align: center;
+}
+
+.action {
+    cursor: pointer;
+}
+
+.action:hover {
+    color: grey;
+}
+
+.modify-field {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+}
+
+.modify-description,
+.modify-title {
+    width: 100%;
+}
+
+.modify {
+    display: flex;
+    flex-direction: row;
+    align-content: space-between;
+}
+
+.modify-button,
+.cancel-button {
+    width: 10%;
+    margin: auto;
+}
+
+.text-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    margin: 1vh 2vh;
+}
+
+.form-control {
+    width: 30%;
+}
+
+.fidget-spinner {
+    margin: auto;
+}
+
+.error {
+    display: flex;
+    color: #d8000c;
+    background-color: #ffd2d2;
+    align-items: center;
+    justify-content: center;
+}

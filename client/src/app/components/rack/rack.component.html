@@ -1,0 +1,21 @@
+<div class="rack" #rack tabindex="1">
+    <div class="rack-back"></div>
+    <div class="buttons flex-vertical center space-out">
+        <button mat-raised-button class="button-rack" *ngIf="isExchanged" (click)="confirmExchange()" [disabled]="!isTurn || reserveSize < 7">
+            Échanger
+        </button>
+        <button mat-raised-button class="button-rack" *ngIf="isExchanged" (click)="cancelExchange()">Annuler</button>
+    </div>
+    <div class="letters">
+        <app-letter
+            *ngFor="let letter of letters; let i = index"
+            [letter]="letter"
+            class="letter"
+            (click)="handleLetterLeftClick(i)"
+            (contextmenu)="handleLetterRightClick(i, $event)"
+            [class.selected]="i === selected"
+            [class.selectedExchange]="exchangeSelection.has(i)"
+        ></app-letter>
+    </div>
+    <div class="rack-bottom"></div>
+</div>

@@ -1,0 +1,58 @@
+<mat-dialog-content class="fit">
+    <div class="games-history-table">
+        <div class="error" *ngIf="showError">{{ errorMessage.title }} : {{ errorMessage.body }}</div>
+        <mat-progress-spinner *ngIf="isLoading" class="fidget-spinner" color="primary" mode="indeterminate"></mat-progress-spinner>
+        <table *ngIf="showScores" mat-table [dataSource]="gamesHistory" class="games-history">
+            <ng-container matColumnDef="dateBegin">
+                <th mat-header-cell *matHeaderCellDef [attr.rowspan]="2">Début</th>
+                <td mat-cell *matCellDef="let element">{{ element.dateBegin | formatDate }}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="gameDuration">
+                <th mat-header-cell *matHeaderCellDef [attr.rowspan]="2">Durée</th>
+                <td mat-cell *matCellDef="let element">
+                    {{ element.gameDuration | formatTime }}<ng-container *ngIf="element.wasAbandoned"> (abandonnée)</ng-container>
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="firstPlayer">
+                <th mat-header-cell *matHeaderCellDef [attr.colspan]="2">Premier joueur</th>
+            </ng-container>
+
+            <ng-container matColumnDef="secondPlayer">
+                <th mat-header-cell *matHeaderCellDef [attr.colspan]="2">Second joueur</th>
+            </ng-container>
+
+            <ng-container matColumnDef="firstPlayerName">
+                <th mat-header-cell *matHeaderCellDef>Nom</th>
+                <td mat-cell *matCellDef="let element">{{ element.firstPlayer.name }}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="firstPlayerScore">
+                <th mat-header-cell *matHeaderCellDef>Score</th>
+                <td mat-cell *matCellDef="let element">{{ element.firstPlayer.score }}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="secondPlayerName">
+                <th mat-header-cell *matHeaderCellDef>Nom</th>
+                <td mat-cell *matCellDef="let element">{{ element.secondPlayer.name }}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="secondPlayerScore">
+                <th mat-header-cell *matHeaderCellDef>Score</th>
+                <td mat-cell *matCellDef="let element">{{ element.secondPlayer.score }}</td>
+            </ng-container>
+
+            <ng-container matColumnDef="gameMode">
+                <th mat-header-cell *matHeaderCellDef [attr.rowspan]="2">Mode de jeu</th>
+                <td mat-cell *matCellDef="let element">{{ element.gameMode }}</td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="['dateBegin', 'gameDuration', 'firstPlayer', 'secondPlayer', 'gameMode']"></tr>
+            <tr mat-header-row *matHeaderRowDef="['firstPlayerName', 'firstPlayerScore', 'secondPlayerName', 'secondPlayerScore']"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+        </table>
+        <button mat-raised-button (click)="ngOnInit()" [disabled]="isLoading">Rafraîchir</button>
+        <button mat-raised-button (click)="deleteAll()" [disabled]="gamesHistory.length === 0">Supprimer</button>
+    </div>
+</mat-dialog-content>

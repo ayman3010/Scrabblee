@@ -1,0 +1,27 @@
+.container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.play-area {
+    overflow: auto;
+    display: flex;
+    width: match-parent;
+    outline: none;
+    min-width: 46%;
+    max-width: 46%;
+    height: 100%;
+}
+
+.communications {
+    max-width: 27%;
+    box-sizing: border-box;
+    height: 100%;
+}
+
+.sidebar {
+    max-width: 27%;
+    height: 100%;
+}

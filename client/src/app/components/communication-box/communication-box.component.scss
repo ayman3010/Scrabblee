@@ -1,0 +1,101 @@
+.title {
+    font-weight: 500;
+    font-size: 24px;
+    padding: 2vh;
+    background-color: #45d44c;
+    border-radius: 5px 5px 0 0;
+    max-width: 39vh;
+    min-width: 39vh;
+    text-align: center;
+}
+
+.container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-right: 2vh;
+    padding-left: 2vh;
+}
+
+.chatbox {
+    background-color: white;
+    overflow: auto;
+    max-height: 88vh;
+    min-height: 88vh;
+    max-width: 43vh;
+    min-width: 43vh;
+    padding: 2vh 2vh 0.1vh 2vh;
+    white-space: break-spaces;
+    box-sizing: border-box;
+}
+
+.textbox {
+    max-width: 43vh;
+    min-width: 43vh;
+    display: flex;
+    flex-direction: row;
+}
+
+.text-input {
+    height: 3vh;
+    width: 100%;
+    border-width: 0;
+    background-color: #45d44c;
+    border-radius: 0 0 0 5px;
+    box-sizing: border-box;
+}
+
+::placeholder {
+    color: darkgreen;
+}
+
+.send {
+    height: 3vh;
+    width: 10vh;
+    padding: 0;
+    border-radius: 0;
+    background-color: green;
+    text-align: center;
+    line-height: 3vh;
+    border-radius: 0 0 5px 0;
+    box-sizing: border-box;
+}
+
+.room-message {
+    max-width: 42vh;
+    margin-bottom: 1vh;
+}
+
+.sender-name {
+    color: #036e08;
+    font-size: smaller;
+    font-weight: 500;
+}
+
+.fromMe {
+    color: black;
+}
+
+.fromServer {
+    color: red;
+}
+
+.message-bubble {
+    background-color: rgb(243, 243, 243);
+    height: fit-content;
+    width: fit-content;
+    min-width: 1vh;
+    max-width: 38vh;
+    border-radius: 2vh;
+    padding: 1vh 2vh;
+}
+
+.message {
+    width: fit-content;
+    word-break: break-word;
+    white-space: break-spaces;
+    max-width: 36vh;
+    box-sizing: border-box;
+}

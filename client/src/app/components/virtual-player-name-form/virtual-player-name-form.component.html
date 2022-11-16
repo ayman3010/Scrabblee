@@ -1,0 +1,12 @@
+<div class="name-form">
+    <form class="row-flex" [formGroup]="virtualPlayerForm" (ngSubmit)="onSubmit()">
+        <mat-form-field>
+            <input matInput #input minlength="3" maxLength="20" formControlName="virtualPlayerName" required [ngModel]="defaultName" />
+            <mat-hint align="end">{{ input.value?.length || 0 }}/20</mat-hint>
+        </mat-form-field>
+        <button class="bottom" mat-button type="submit"><mat-icon>done</mat-icon></button>
+        <button class="bottom" mat-button (click)="cancel.emit()">
+            <mat-icon>cancel</mat-icon>
+        </button>
+    </form>
+</div>

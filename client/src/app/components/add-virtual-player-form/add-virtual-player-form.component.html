@@ -1,0 +1,18 @@
+<div class="name-form">
+    <form class="column-flex" [formGroup]="addVirtualPlayerForm" (ngSubmit)="onSubmit()">
+        <mat-form-field>
+            <input
+                matInput
+                #input
+                minlength="3"
+                maxLength="20"
+                formControlName="newVirtualPlayerName"
+                required
+                cdkFocusInitial
+                placeholder="Nom du nouveau joueur"
+            />
+            <mat-hint align="end">{{ input.value?.length || 0 }}/20</mat-hint>
+        </mat-form-field>
+        <button class="bottom" mat-button type="submit" [disabled]="disabled"><mat-icon>playlist_add</mat-icon></button>
+    </form>
+</div>

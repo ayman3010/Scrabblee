@@ -1,0 +1,12 @@
+<h1 mat-dialog-title>Rejoindre une partie</h1>
+<div mat-dialog-content (keyup.enter)="onConfirmClick()">
+    <mat-form-field hintLabel="3-20 characters" appearance="fill">
+        <mat-label>Nom de joueur</mat-label>
+        <input matInput #input minlength="3" maxLength="20" placeholder="Ex. polylover123" [(ngModel)]="data.playerName" required cdkFocusInitial />
+        <mat-hint align="end">{{ input.value?.length || 0 }}/20</mat-hint>
+    </mat-form-field>
+</div>
+<div mat-dialog-actions>
+    <button mat-button (click)="onCancelClick()">Annuler</button>
+    <button mat-button (click)="onConfirmClick()">Confirmer</button>
+</div>

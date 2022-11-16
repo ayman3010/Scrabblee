@@ -1,0 +1,24 @@
+.letter-tile {
+    position: relative;
+    height: 4.3vh;
+    width: 4.3vh;
+}
+
+.letter-text {
+    position: relative;
+    font-size: x-large;
+    text-align: center;
+    width: 4.3vh;
+    height: 4.3vh;
+    line-height: 4.3vh;
+}
+
+sub {
+    position: absolute;
+    text-align: end;
+    font-size: small;
+    width: 14px;
+    padding-right: 3px;
+    bottom: -10%;
+    left: 60%;
+}

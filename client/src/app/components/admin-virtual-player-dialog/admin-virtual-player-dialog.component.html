@@ -1,0 +1,8 @@
+<mat-tab-group mat-stretch-tabs class="main">
+    <mat-tab label="Joueur Débutant">
+        <app-admin-virtual-player-tab [playerDifficulty]="aiDifficulty[0]"></app-admin-virtual-player-tab>
+    </mat-tab>
+    <mat-tab label="Joueur Expert">
+        <app-admin-virtual-player-tab [playerDifficulty]="aiDifficulty[1]"></app-admin-virtual-player-tab>
+    </mat-tab>
+</mat-tab-group>

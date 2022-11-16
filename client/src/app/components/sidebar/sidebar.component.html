@@ -1,0 +1,75 @@
+<div class="container space-out side">
+    <section class="justified info-box">
+        <div class="timer count">
+            Temps restant au tour : <span class="time">{{ timer | formatTime }} </span>
+            <span class="max-time">/ {{ currentRoom?.gameOptions?.turnDuration ?? 60 | formatTime }}</span>
+        </div>
+        <div class="players flex-vertical center">
+            <span class="player-border" [ngClass]="{ 'active-border': currentRoom?.hostPlayer?.isTurn }">
+                <div class="space-out player nice-green flex-horizontal center">
+                    <div class="player-info">
+                        <div>{{ currentRoom?.hostPlayer?.name }} <span *ngIf="currentRoom?.hostPlayer === currentPlayer">(Moi)</span></div>
+                        <div class="remaining" *ngIf="currentRoom && currentRoom.hostPlayer.rack.content.length < 7">
+                            Lettres restantes : {{ currentRoom.hostPlayer.rack.content.length }}
+                        </div>
+                    </div>
+                    <div class="count point-count bottom">{{ currentRoom?.hostPlayer?.points }}</div>
+                </div>
+            </span>
+            <span class="player-border" [ngClass]="{ 'active-border': currentRoom?.guestPlayer?.isTurn }">
+                <div class="space-out player nice-green flex-horizontal center">
+                    <div class="player-info">
+                        <div>
+                            {{ currentRoom?.guestPlayer?.name }} <span *ngIf="currentRoom?.guestPlayer === currentPlayer">(Moi)</span>
+                            <span *ngIf="currentRoom?.gameOptions?.singlePlayer">
+                                <span *ngIf="isExpert()">(Expert)</span>
+                                <span *ngIf="!isExpert()">(Débutant)</span>
+                            </span>
+                        </div>
+                        <div class="remaining" *ngIf="currentRoom && currentRoom.guestPlayer.rack.content.length < 7">
+                            Lettres restantes : {{ currentRoom.guestPlayer.rack.content.length }}
+                        </div>
+                    </div>
+                    <div class="count point-count bottom">{{ currentRoom?.guestPlayer?.points }}</div>
+                </div>
+            </span>
+        </div>
+    </section>
+
+    <section class="justified middle">
+        <section class="end-results">
+            <div *ngIf="currentRoom?.gameState === gameState.GameOver" class="congrats">
+                {{ generateCongratulations() }}
+            </div>
+        </section>
+        <div class="reserve nice-green">
+            Réserve : <span class="count bottom">{{ currentRoom?.reserve?.nbOfLetters }}</span>
+        </div>
+        <button mat-raised-button (click)="skipTurn()" [disabled]="!isTurn || currentRoom?.gameState === gameState.GameOver">Passer</button>
+    </section>
+
+    <section class="objectives flex-vertical center" *ngIf="showObjectives">
+        <app-objective
+            *ngFor="let objective of privateObjectivesHost"
+            [objective]="objective"
+            [currentPlayerName]="currentPlayer.name"
+        ></app-objective>
+        <app-objective
+            *ngFor="let objective of privateObjectivesGuest"
+            [objective]="objective"
+            [currentPlayerName]="currentPlayer.name"
+        ></app-objective>
+        <app-objective
+            *ngFor="let objective of currentRoom.objectives.slice(0, numberOfPublicObjectives)"
+            [objective]="objective"
+            [currentPlayerName]="currentPlayer.name"
+        ></app-objective>
+    </section>
+
+    <section class="bottom flex-horizontal center space-out">
+        <app-text-size-button (resizeText)="resizeText($event)"></app-text-size-button>
+        <button mat-raised-button class="abandon" (click)="openAbandonDialog()">
+            {{ currentRoom?.gameState === gameState.GameOver ? 'Quitter' : 'Abandonner' }}
+        </button>
+    </section>
+</div>

@@ -1,0 +1,15 @@
+<mat-tab-group mat-stretch-tabs class="main">
+    <mat-tab label="Solo">
+        <app-game-options-form [singlePlayer]="true"></app-game-options-form>
+    </mat-tab>
+    <mat-tab label="Multi-joueur">
+        <mat-tab-group mat-stretch-tabs class="sub">
+            <mat-tab label="Créer une partie">
+                <app-game-options-form></app-game-options-form>
+            </mat-tab>
+            <mat-tab label="Joindre une partie">
+                <app-available-games (gameStarting)="close()" [gameType]="gameType"></app-available-games>
+            </mat-tab>
+        </mat-tab-group>
+    </mat-tab>
+</mat-tab-group>
